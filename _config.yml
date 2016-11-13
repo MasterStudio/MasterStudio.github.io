@@ -3,14 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: MasterStudio 
+title: MasterBlog
 subtitle: Master the Coding World
 description: Talk is cheap. Show me the code
-author: EvanWang
+author: MasterStudio
 language: zh-Hans
 timezone:
 avatar: http://ogl5vjc1c.bkt.clouddn.com/image/logo/master_studio.png
-since: 2016
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -69,16 +68,38 @@ theme: next
 stylus:
   compress: true
 
+# @see https://github.com/chenzhutian/hexo-all-minifier
 html_minifier:
   enable: true
   exclude:
+
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
 
 # Local Search
 search:
   path: search.xml
   field: post
 
-# Feed Atom
+# Feed Atom (https://github.com/hexojs/hexo-generator-feed)
 feed:
   type: atom
   path: atom.xml
